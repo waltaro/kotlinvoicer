@@ -12,6 +12,7 @@ class MainMenuStyle : Stylesheet() {
         val mainWrapper by cssclass()
         val mainButton by cssclass()
         val mainTitle by cssclass()
+        val mainSeparator by cssclass()
     }
 
     init {
@@ -25,8 +26,12 @@ class MainMenuStyle : Stylesheet() {
 
             s(mainTitle) {
                 fontSize = 25.px
-                padding = box(0.px, 0.px, 15.px, 0.px)
                 alignment = Pos.CENTER
+            }
+
+            s(mainSeparator) {
+                alignment = Pos.CENTER
+                padding = box(5.px, 0.px, 15.px, 0.px)
             }
         }
 
