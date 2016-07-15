@@ -19,7 +19,6 @@ class OptionStyle : Stylesheet() {
 
             s(optionTitle) {
                 fontSize = 25.px
-                fontStyle = FontPosture.REGULAR
             }
         }
     }
