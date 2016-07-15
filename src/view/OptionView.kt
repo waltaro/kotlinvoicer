@@ -2,14 +2,14 @@ package view
 
 import controller.OptionsController
 import javafx.scene.control.TextField
-import javafx.scene.layout.BorderPane
+import javafx.scene.layout.GridPane
 import tornadofx.*
-import view.style.OptionStyle
+import view.style.OptionStyle.Companion.optionTitle
 import view.style.OptionStyle.Companion.mainWrapper
 
 class OptionView : View() {
 
-    override val root = BorderPane()
+    override val root = GridPane()
     val mainMenuView: MainMenu by inject()
 
     var businessNameField: TextField by singleAssign()
@@ -18,42 +18,74 @@ class OptionView : View() {
     val optionController: OptionsController by inject()
 
     init {
-        importStylesheet(OptionStyle::class)
 
         with(root) {
 
             addClass(mainWrapper)
 
-            center {
+            // Main title
+            text("Business Info") {
+                addClass(optionTitle)
 
-                form {
-                    // TODO: should set default text to values found in properties file
-                    fieldset("Business Info") {
+                gridpaneConstraints {
+                    columnRowIndex(0,0)
+                    marginBottom = 10.0
+                    columnSpan = 2
+                }
+            }
 
-                        field("Name: ") {
-                            businessNameField = textfield() {
+            // Name field
+            label("Name: ") {
 
-                            }
-                        }
+                // Text field for entering in user business name
+                businessNameField = textfield() {
 
-                        field("ABN #: ") {
-                            abnNumField = textfield() {
-
-                            }
-                        }
+                    gridpaneConstraints {
+                        columnRowIndex(1,1)
+                        marginBottom = 10.0
                     }
+                }
 
-                    hbox {
-                        // TODO: Save to properties file, disable if fields are blank
-                        button("Save") {
-                            setOnAction { println("Name: ${businessNameField.text}\nABN: ${abnNumField.text}")}
-                        }
+                gridpaneConstraints {
+                    columnRowIndex(0,1)
+                    marginBottom = 10.0
+                }
+            }
 
-                        // Returns user back to the main menu
-                        button("Back") {
-                            setOnAction { optionController.changeView(mainMenuView)}
-                        }
+            // ABN # field
+            label("ABN #: ") {
+
+                // Text field for entering in user ABN
+                abnNumField = textfield() {
+                    gridpaneConstraints {
+                        columnRowIndex(1,2)
+                        marginBottom = 10.0
                     }
+                }
+
+                gridpaneConstraints {
+                    columnRowIndex(0,2)
+                    marginBottom = 10.0
+                }
+            }
+
+            // Buttons
+            button("Save") {
+                // TODO: Save to properties file, disable if fields are blank
+                setOnAction { println("Name: ${businessNameField.text}\nABN: ${abnNumField.text}") }
+
+                gridpaneConstraints {
+                    columnRowIndex(0,3)
+                    marginRight = 10.0
+                }
+            }
+
+            // Returns user back to the main menu
+            button("Back") {
+                setOnAction { optionController.changeView(mainMenuView) }
+
+                gridpaneConstraints {
+                    columnRowIndex(1,3)
                 }
             }
         }
