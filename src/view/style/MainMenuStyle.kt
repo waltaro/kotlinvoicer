@@ -1,6 +1,5 @@
 package view.style
 
-import javafx.geometry.Pos
 import tornadofx.Stylesheet
 import tornadofx.box
 import tornadofx.cssclass
@@ -11,7 +10,6 @@ class MainMenuStyle : Stylesheet() {
     companion object {
         val mainWrapper by cssclass()
         val mainTitle by cssclass()
-        val mainSeparator by cssclass()
     }
 
     init {
@@ -20,10 +18,6 @@ class MainMenuStyle : Stylesheet() {
 
             s(mainTitle) {
                 fontSize = 25.px
-            }
-
-            s(mainSeparator) {
-                padding = box(5.px, 0.px, 15.px, 0.px)
             }
         }
 
