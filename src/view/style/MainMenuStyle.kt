@@ -17,7 +17,7 @@ class MainMenuStyle : Stylesheet() {
 
     init {
         s(mainWrapper) {
-            padding = box(15.px, 20.px)
+            padding = box(25.px)
 
             s(mainButton) {
                 spacing = 15.px

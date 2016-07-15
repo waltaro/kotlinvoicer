@@ -1,6 +1,6 @@
 package view
 
-import javafx.geometry.Pos
+import controller.MainMenuController
 import javafx.scene.layout.BorderPane
 import tornadofx.*
 import view.style.MainMenuStyle.Companion.mainButton
@@ -11,11 +11,14 @@ import view.style.MainMenuStyle.Companion.mainWrapper
 class MainMenu : View() {
     override val root = BorderPane()
 
+    // Views
     val optionView: OptionView by inject()
     val invoiceView: NewInvoiceView by inject()
 
+    // Controller
+    val menuController: MainMenuController by inject()
+
     init {
-        title = "Kotlinvoicer"
 
         with(root)
         {
@@ -41,17 +44,17 @@ class MainMenu : View() {
 
                     // Change view to new invoice view
                     button("New") {
-                        setOnAction { replaceWith(invoiceView) }
+                        setOnAction { menuController.changeView(invoiceView) }
                     }
 
                     // TODO: implement loading of invoice
                     button("Load") {
-                        setOnAction { root }
+                        setOnAction { menuController.loadInvoice() }
                     }
 
                     // Change view to option view
                     button("Option") {
-                        setOnAction { replaceWith(optionView) }
+                        setOnAction { menuController.changeView(optionView) }
                     }
                 }
             }
