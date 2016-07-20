@@ -15,5 +15,13 @@ class OptionsControllerTest : FlatSpec() {
             optionController.getAbn() shouldBe "51 824 753 556"
         }
 
+        "verifyAbn" should "return true" {
+
+        }
+
+        "verifyAbn" should "return false" {
+
+        }
+
     }
 }

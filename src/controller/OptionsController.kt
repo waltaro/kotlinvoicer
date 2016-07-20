@@ -1,11 +1,12 @@
 package controller
 
 import com.natpryce.konfig.*
+import controller.interfaces.AbnVerifier
 import controller.interfaces.ViewChanger
 import tornadofx.Controller
 
 // TODO: implement saving to properties file
-class OptionsController : ViewChanger, Controller() {
+class OptionsController : ViewChanger, AbnVerifier, Controller() {
 
     // Property keys
     object business : PropertyGroup() {
