@@ -40,8 +40,8 @@ class OptionView : View() {
                 // Text field for entering in user business name
                 businessNameField = textfield() {
 
-                    // TODO: load text from properties file
-                    text = "Your Business Name"
+                    // Set text to the configure business name
+                    text = optionController.getBusinessName()
 
                     gridpaneConstraints {
                         columnRowIndex(1,1)
@@ -61,8 +61,8 @@ class OptionView : View() {
                 // Text field for entering in user ABN
                 abnNumField = textfield() {
 
-                    // TODO: load text from properties file
-                    text = "51 824 753 556"
+                    // Set text to the configured abn
+                    text = optionController.getAbn()
 
                     gridpaneConstraints {
                         columnRowIndex(1,2)
