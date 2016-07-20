@@ -9,7 +9,7 @@ interface ViewChanger {
         if (FX.primaryStage.scene.root != view.root) {
             FX.primaryStage.scene.root = view.root
             FX.primaryStage.sizeToScene()
-            FX.primaryStage.centerOnScreen()
+            FX.primaryStage.resizableProperty().set(false)
         }
     }
 

@@ -18,6 +18,9 @@ class MainMenu : View() {
 
     init {
 
+        // Disable resizing of application
+        FX.primaryStage.resizableProperty().set(false)
+
         with(root)
         {
             addClass(mainWrapper)
