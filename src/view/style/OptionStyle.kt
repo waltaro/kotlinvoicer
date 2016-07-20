@@ -1,6 +1,5 @@
 package view.style
 
-import javafx.scene.text.FontPosture
 import tornadofx.Stylesheet
 import tornadofx.box
 import tornadofx.cssclass
