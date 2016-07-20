@@ -1,7 +1,5 @@
 import tornadofx.App
 import tornadofx.importStylesheet
-import tornadofx.reloadStylesheetsOnFocus
-import tornadofx.reloadViewsOnFocus
 import view.MainMenu
 import view.style.MainMenuStyle
 import view.style.OptionStyle

@@ -24,7 +24,7 @@ class OptionView : View() {
             addClass(mainWrapper)
 
             // Main title
-            text("Business Info") {
+            text("Option") {
                 addClass(optionTitle)
 
                 gridpaneConstraints {
@@ -39,6 +39,9 @@ class OptionView : View() {
 
                 // Text field for entering in user business name
                 businessNameField = textfield() {
+
+                    // TODO: load text from properties file
+                    text = "Your Business Name"
 
                     gridpaneConstraints {
                         columnRowIndex(1,1)
@@ -57,6 +60,10 @@ class OptionView : View() {
 
                 // Text field for entering in user ABN
                 abnNumField = textfield() {
+
+                    // TODO: load text from properties file
+                    text = "51 824 753 556"
+
                     gridpaneConstraints {
                         columnRowIndex(1,2)
                         marginBottom = 10.0
@@ -71,6 +78,7 @@ class OptionView : View() {
 
             // Buttons
             button("Save") {
+
                 // TODO: Save to properties file, disable if fields are blank
                 setOnAction { println("Name: ${businessNameField.text}\nABN: ${abnNumField.text}") }
 
