@@ -35,19 +35,7 @@ class OptionView : View() {
             }
 
             // Name field
-            label("Name: ") {
-
-                // Text field for entering in user business name
-                businessNameField = textfield() {
-
-                    // Set text to the configure business name
-                    text = optionController.getBusinessName()
-
-                    gridpaneConstraints {
-                        columnRowIndex(1,1)
-                        marginBottom = 10.0
-                    }
-                }
+            label("Name :") {
 
                 gridpaneConstraints {
                     columnRowIndex(0,1)
@@ -55,23 +43,35 @@ class OptionView : View() {
                 }
             }
 
-            // ABN # field
-            label("ABN #: ") {
+            // Text field for entering in user business name
+            businessNameField = textfield() {
 
-                // Text field for entering in user ABN
-                abnNumField = textfield() {
+                // Set text to the configure business name
+                text = optionController.getBusinessName()
 
-                    // Set text to the configured abn
-                    text = optionController.getAbn()
-
-                    gridpaneConstraints {
-                        columnRowIndex(1,2)
-                        marginBottom = 10.0
-                    }
+                gridpaneConstraints {
+                    columnRowIndex(1,1)
+                    marginBottom = 10.0
                 }
+            }
+
+            // ABN # field
+            label("ABN # :") {
 
                 gridpaneConstraints {
                     columnRowIndex(0,2)
+                    marginBottom = 10.0
+                }
+            }
+
+            // Text field for entering in user ABN
+            abnNumField = textfield() {
+
+                // Set text to the configured abn
+                text = optionController.getAbn()
+
+                gridpaneConstraints {
+                    columnRowIndex(1,2)
                     marginBottom = 10.0
                 }
             }
